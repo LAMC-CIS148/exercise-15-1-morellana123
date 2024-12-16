@@ -119,6 +119,67 @@ section ul {
 section li {
 	padding-bottom: .35em;
 }
+aside img {
+  padding-bottom: 1em;
+  /* Add the transition properties */
+  transition: transform 2s ease;
+}
+
+/* Add the hover effect to move the images */
+aside img:hover {
+  /* Move the images 100 pixels to the right and 20 pixels down */
+  transform: translate(100px, 20px);
+}
+
+/* Add a transition with a transform to rotate the image in the article */
+article img {
+  float: right;
+  margin: .5em 0 1em 1em;
+  border: 1px solid black;
+  /* Add the transition property */
+  transition: transform 3s ease;
+}
+
+/* Add the hover effect to rotate the image */
+article img:hover {
+  /* Rotate the image by 720 degrees */
+  transform: rotate(720deg);
+  /* Set the transform origin to the upper left of the image */
+  transform-origin: 0 0;
+}
+
+/* Animate the images in the aside on page load */
+@keyframes moveImages {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100px, 20px);
+  }
+}
+
+/* Apply the animation to the images */
+aside img {
+  padding-bottom: 1em;
+  animation: moveImages 3s 2s 4 alternate;
+  /* Add the transition properties for smoother animation */
+  transition: transform 2s ease;
+}
+
+/* Add a transform to increase the size of the image during the animation */
+@keyframes scaleImage {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.4);
+  }
+}
+
+/* Apply the scaling animation on hover */
+aside img:hover {
+  animation: scaleImage 2s infinite alternate;
+}
 
 /* the styles for the article */
 article {
